@@ -2,10 +2,9 @@ import React from "react";
 import { Chart as ChartJS, registerables } from "chart.js";
 import { Bar } from "react-chartjs-2";
 
-
 ChartJS.register(...registerables);
 
-export default function BarChart( {dataBar, name}) {
+export default function BarChart({ dataBar, name }) {
   const data = {
     labels: ["Jan/Fev", "Mar/Avr", "Mai/Ju", "Jui/Aout", "Sep/Oct", "Nov/Dec"],
     datasets: [
