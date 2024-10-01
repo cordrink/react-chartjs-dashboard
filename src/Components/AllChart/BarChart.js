@@ -1,17 +1,17 @@
 import React from "react";
 import { Chart as ChartJS, registerables } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import fullData from "../../context/fulldata";
+
 
 ChartJS.register(...registerables);
 
-export default function BarChart() {
+export default function BarChart( {dataBar, name}) {
   const data = {
     labels: ["Jan/Fev", "Mar/Avr", "Mai/Ju", "Jui/Aout", "Sep/Oct", "Nov/Dec"],
     datasets: [
       {
         label: "stat",
-        data: fullData["2020"].chart1,
+        data: dataBar,
         backgroundColor: [
           "rgba(255, 99, 132, 0.8)",
           "rgba(54, 162, 235, 0.8)",
@@ -41,7 +41,7 @@ export default function BarChart() {
       },
       title: {
         display: true,
-        text: "Chiffre bimestriel"
+        text: name,
       },
     },
     scales: {
@@ -57,7 +57,7 @@ export default function BarChart() {
           },
         },
       },
-    }
+    },
   };
 
   return (
